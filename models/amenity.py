@@ -6,4 +6,5 @@ from models import BaseModel
 
 
 class Amenity(BaseModel):
+    """amenity class with class attribute name"""
     name = ""

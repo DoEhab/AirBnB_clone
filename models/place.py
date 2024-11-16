@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-from models import BaseModel
+from models.base_model import BaseModel
 
 """Define place class"""
 
 
 class Place(BaseModel):
+    """place class with all place details"""
+
     city_id = ""
     user_id = ""
     name = ""
