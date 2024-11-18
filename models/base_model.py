@@ -18,8 +18,8 @@ class BaseModel:
 
         date_format = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        self.created_at = datetime.today()
+        self.updated_at = datetime.today()
 
         if len(kwargs) != 0:
             for key, value in kwargs.items():
@@ -30,14 +30,14 @@ class BaseModel:
         else:
             models.storage.new(self)
 
-
     def __str__(self):
         """ overwrite __str__ method to return class name"""
-        return str.format("({}) [{}] <{}>", self.__class__.__name__, self.id, self.__dict__)
+        return str.format("({}) [{}] <{}>",
+                          self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
         """ updates the time for instance change"""
-        self.updated_at = datetime.now()
+        self.updated_at = datetime.today()
         models.storage.save()
 
     def to_dict(self):
@@ -47,5 +47,3 @@ class BaseModel:
         dict_rep["created_at"] = self.created_at.isoformat()
         dict_rep["updated_at"] = self.updated_at.isoformat()
         return dict_rep
-
-
