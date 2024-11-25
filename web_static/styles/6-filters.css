@@ -17,6 +17,7 @@
     justify-content: center;
     text-align: left;
     flex-grow: 1;
+    position: relative;
 }
 .locations {
     border-right: 1px solid #DDDDDD;
@@ -29,6 +30,24 @@
     font-weight: 400;
     font-size: 14px;
     margin: 0;
+}
+.popover {
+    color: black;
+    background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 100%;
+    margin: 0;
+}
+.popover h2{
+    font-size: 16px;
+    margin: 0;
+}
+.locations:hover .popover, .amenities:hover .popover {
+    display: block;
 }
 .search-button {
     font-size: 18px;
