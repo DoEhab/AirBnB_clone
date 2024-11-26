@@ -12,6 +12,7 @@
     margin: 20px;
     border: 1px solid #FF5A5F;
     border-radius: 4px;
+    position: relative;
 }
 .places h2 {
     font-size: 30px;
@@ -23,17 +24,27 @@
     min-width: 60px;
     height: 60px;
     font-size: 30px;
-    align: the top right (with space)
+    top: 10px;
+    right: 10px;
+    position: absolute;
 }
 .information {
     height: 80px;
-    border-top: 1px #DDDDDD;
-    border-bottom: 1px #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    display: flex;
+    flex-direction: column;
 }
-.max_guest {
+.max_guest::before {
+    background-image: url('../images/icon_group.png');
     width: 100px;
 }
-.number_bathrooms {
+.number_rooms::before {
+    background-image: url('../images/icon_bed.png');
+    width: 100px;
+}
+.number_bathrooms::before {
+    background-image: url('../images/icon_bath.png');
     width: 100px;
 }
 .user {
